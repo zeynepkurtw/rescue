@@ -22,7 +22,7 @@ rule flye:
            out_dir = directory("results/Genomics/1_Assembly/2_Assemblers/flye/"),
            out= "results/Genomics/1_Assembly/2_Assemblers/flye/assembly.fasta",
     conda:
-         "workflow/envs/genomics.yaml"
+         "envs/genomics.yaml"
     script:
           "workflow/scripts/genomics/assembly/flye.py"
 
@@ -36,7 +36,7 @@ rule meryl:
           threads=30,
           nanopore=True
     conda:
-         "workflow/envs/genomics.yaml"
+         "envs/genomics.yaml"
     script:
           "workflow/scripts/genomics/assembly/meryl.py"
 
@@ -52,7 +52,7 @@ rule winnowmap:
           threads=32,
           nanopore=True
     conda:
-         "workflow/envs/genomics.yaml"
+         "envs/genomics.yaml"
     script:
           "workflow/scripts/genomics/assembly/winnowmap.py"
 
@@ -65,7 +65,7 @@ rule quast:
     output:
           report_dir=directory("results/Genomics/1_Assembly/3_Evaluation/quast/{assembler}/")
     conda:
-         "workflow/envs/genomics.yaml"
+         "envs/genomics.yaml"
     script:
           "workflow/scripts/genomics/assembly/quast.py"
 
@@ -77,7 +77,7 @@ rule multiqc:
     output:
           out_dir=directory("results/Genomics/1_Assembly/3_Evaluation/multiqc/{assembler}")
     conda:
-         "workflow/envs/genomics.yaml"
+         "envs/genomics.yaml"
     script:
          "workflow/scripts/genomics/assembly/multiqc.py"
 
@@ -91,7 +91,7 @@ rule plot_coverage_cont:
     params:
           threads=32,
     conda:
-         "workflow/envs/genomics.yaml"
+         "envs/genomics.yaml"
     script:
           "workflow/scripts/genomics/assembly/deeptools.py"
 

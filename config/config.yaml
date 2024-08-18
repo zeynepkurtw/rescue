@@ -1,4 +1,4 @@
 data_dir: "/data/zeynep/barkhanus_data/DNA/raw/nanopore.fastq.gz"
-#data_dir: resources/RawData/DNA/SBKI_220707_SRE_v6.fastq
+#data_dir: resources/RawData/DNA/nanopore.fastq.gz
 
 blast_db: "/data/zeynep/databases"
